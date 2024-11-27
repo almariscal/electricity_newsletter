@@ -1,0 +1,105 @@
+query_analysis:
+  description: >
+    Analizar la solicitud del usuario {user_input} para identificar la empresa objetivo y los requerimientos específicos de búsqueda.
+    El análisis debe determinar el nombre de la empresa y los aspectos clave a investigar, como campañas publicitarias, promociones recientes y precios.
+  expected_output: >
+    Un conjunto de puntos clave que guiarán la búsqueda, incluyendo:
+    - Nombre de la empresa.
+    - Detalles específicos a buscar (campañas publicitarias, precios, características).
+    - Criterios para filtrar información relevante (por ejemplo, campañas recientes o de gran impacto).
+
+web_scraping:
+  description: >
+    Buscar en internet noticias, promociones y campañas publicitarias recientes relacionadas con la empresa.
+    Extraer detalles relevantes como título, descripción, características de las campañas y precios ofrecidos.
+    Priorizar fuentes confiables y resultados actualizados en un contexto publicitario.
+  expected_output: >
+    Un conjunto de datos estructurados para cada campaña encontrada, incluyendo:
+    - Título de la campaña.
+    - Descripción de la campaña.
+    - Características principales.
+    - Precios ofrecidos.
+
+campaign_summary:
+  description: >
+    Tomar los datos recopilados por el agente web_scraper y generar un resumen estructurado para cada campaña publicitaria.
+    Asegurarse de que los resúmenes sean claros, completos y estén organizados de acuerdo con los siguientes campos:
+    - Empresa.
+    - Título de la campaña.
+    - Descripción de la campaña.
+    - Características de la campaña.
+    - Precios.
+  expected_output: >
+    Un resumen estructurado para cada campaña publicitaria recopilada, con los campos especificados en el formato requerido.
+
+price_calculation:
+  description: >
+    Utilizar los precios recopilados para calcular el costo que pagaría un cliente promedio con un consumo de 3 MWh anuales y 5 kW de potencia instalada.
+    Este cálculo debe basarse en las tarifas proporcionadas en cada campaña publicitaria.
+  expected_output: >
+    Un cálculo detallado para cada campaña, indicando el costo anual estimado para un cliente promedio con las condiciones especificadas.
+
+report_generation:
+  description: >
+    Compilar la información proporcionada por los agentes previos en un informe en formato Markdown.
+    El informe debe incluir los siguientes campos para cada campaña publicitaria:
+    - Empresa.
+    - Título de la campaña.
+    - Descripción de la campaña.
+    - Características de la campaña.
+    - Precios.
+  expected_output: >
+    Un informe en formato Markdown, organizado de manera clara y profesional, listo para ser presentado.
+    El informe debe contener un resumen bien estructurado y todos los cálculos requeridos. Aquí tienes un ejemplo del output:
+    """
+    # Informe de Campañas Publicitarias de [Nombre de la Empresa]
+
+    ## Resumen Ejecutivo
+    Este informe detalla las campañas publicitarias más recientes y relevantes de **[Nombre de la Empresa]**. Incluye un análisis de precios y un cálculo estimado para un cliente promedio con un consumo de 3 MWh anuales y 5 kW de potencia instalada.
+
+    ---
+
+    ## Campañas Publicitarias
+
+    ### Campaña 1: [Nombre Empresa] - [Título de la Campaña]
+    - **Descripción:**  
+      [Descripción detallada de la campaña.]
+
+    - **Características Principales:**
+      - Característica 1
+      - Característica 2
+      - Característica 3
+
+    - **Precios Ofrecidos:**
+      - Descripción de los precios y condiciones
+
+    - ** Fuentes **
+    1. [Título del Enlace 1](https://ejemplo.com)
+    2. [Título del Enlace 2](https://ejemplo.com)
+    
+    - ** Conclusión **
+    Conclusiones y curiosidades de la campaña.
+
+    ---
+
+    ### Campaña 2: [Nombre Empresa] - [Título de la Campaña]
+    - **Descripción:**  
+      [Descripción detallada de la campaña.]
+
+    - **Características Principales:**
+      - Característica 1
+      - Característica 2
+      - Característica 3
+
+    - **Precios Ofrecidos:**
+      - Descripción de los precios y condiciones
+
+    - ** Fuentes **
+    1. [Título del Enlace 1](https://ejemplo.com)
+    2. [Título del Enlace 2](https://ejemplo.com)
+
+    - ** Conclusión **
+    Conclusiones y curiosidades de la campaña.
+
+    ---
+    """
